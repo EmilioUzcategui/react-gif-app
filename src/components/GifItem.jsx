@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-const GifItem = ({ title, image }) => {
+const GifItem = ({ title = 'No hay titulo', image = 'No hay imagen' }) => {
     return (
         <div className='card'>
             <img src={image} alt={title} />

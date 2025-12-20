@@ -1,9 +1,9 @@
 import { useState } from "react"
 
-export const AddCategory = ({ onNewCategory }) => {
+export const AddCategory = ({ onNewCategory = () => { } }) => {
 
 
-    const [inputValue, setInputValue] = useState('loona')
+    const [inputValue, setInputValue] = useState('')
 
     const onInputChange = (event) => {
         setInputValue(event.target.value)
@@ -11,7 +11,6 @@ export const AddCategory = ({ onNewCategory }) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log(inputValue);
         if (inputValue.trim().length <= 1) return;
         // onAddCategory(categories => [inputValue, ...categories]);
         onNewCategory(inputValue.trim());
@@ -19,7 +18,7 @@ export const AddCategory = ({ onNewCategory }) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} aria-label="form">
             <input
                 type="text"
                 placeholder="Buscar Gifs"

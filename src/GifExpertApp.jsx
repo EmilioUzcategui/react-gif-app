@@ -3,7 +3,7 @@ import { AddCategory, GifGrid } from "./components";
 
 export const GifExpertApp = () => {
 
-    const [categories, setCategories] = useState(['stan loona']);
+    const [categories, setCategories] = useState([]);
 
     const onAddCategory = (newCategory) => {
         const validacionObjecto = categories.map(category => category.toLowerCase())
